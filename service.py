@@ -507,6 +507,7 @@ def content_mpd(session, c_type, c_id):
 
         if hd_enabled:
             data["device"]["maxVideoFormat"] = "UHD"
+            data["device"]["robustness"] = "HW_SECURE_ALL"
 
         url = f'{ovp_url}.{cc_urls[cc]}/video/playouts/{c_type}'
         signature = tools.calculate_signature('POST', url, headers, json.dumps(data))
